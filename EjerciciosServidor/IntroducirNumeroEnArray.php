@@ -1,15 +1,19 @@
 <?php
     $array1 = array(28,32,90,54,3);
+    $valor = 100;
+    $posicion = 4;
+    $longitud = count($array1);
 
-    foreach($array1 as $numeros)
-    {
-        echo ",$numeros";
-    }
+    echo "Array original.<br>";
+    print_r($array1);
     echo "<br>";
 
-    $nuevo_numero = array_push($array1,100);
-    foreach($array1 as &$nuevo_numero)
+    while($longitud >= $posicion)
     {
-        echo ",$nuevo_numero";
+        $array1[$longitud] = $array1[$longitud-1];
+        $longitud--;
     }
+    echo "Nuevo array.<br>";
+
+    
 ?>
