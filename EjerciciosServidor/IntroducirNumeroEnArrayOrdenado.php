@@ -2,7 +2,7 @@
     $array1 = array(2,12,23,32,48); //Array ordenado
     $valor_nuevo = 25;
     $contador = 0;
-    $longitud = count($array1)-1;
+    $longitud = count($array1); 
 
     echo "Array original.<br>";
     print_r($array1);
@@ -13,7 +13,6 @@
     {
         $contador = $contador + 1;
     }
-    print_r($array1);
     if($array1[$contador] > $valor_nuevo)
     {
         $posicion = $contador;

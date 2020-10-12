@@ -3,7 +3,7 @@
     $valor_nuevo = 100;
     $indice = 0;
     $posicion = 4;
-    $longitud = count($array1);
+    $longitud = count($array1) - 1;
     $auxiliar = $longitud;
 
     echo "Array original.<br>";
