@@ -14,23 +14,29 @@
 
     //Empezamos a modificar.
     //Mientras que el contador esté dentro de la longitud y el número sea menor del número a borrar:
-    while($contador <= $longitud and $array1[$contador] <= $num_borrar)
+    while($contador <= $longitud and $array1[$contador] != $num_borrar)
     {
         $contador++;
     }
     if($array1[$contador] > $num_borrar)
     {
-        $auxiliar = $longitud;
-        $posicion = $contador;
-
-        while($array1[$posicion] <= $auxiliar)
+        echo "El numero no exíste";
+    }
+    else
+    {
+        $indice = $contador;
+        while($indice < $longitud)
         {
-            $array1[$posicion] = $array1[$posicion + 1];
-            $posicion++;
+            $array1[$indice] = $array1[$indice+1];
+            $indice++;
+        }
+        $longitud = $longitud - 1;
+
+        $indice = 0;
+        while($indice <= $longitud)
+        {
+            echo $array1[$indice]."<br>";
+            $indice++;
         }
     }
-    $contador = $longitud - 1;
-
-    echo "Array nuevo.<br>";
-    print_r($array1);
 ?>
