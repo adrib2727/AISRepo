@@ -29,7 +29,4 @@
         $posicion = $contador;
         $array1[$posicion] = $valor_nuevo;
     }
-
-    echo "Nuevo array.<br>";
-    print_r($array1);
 ?>

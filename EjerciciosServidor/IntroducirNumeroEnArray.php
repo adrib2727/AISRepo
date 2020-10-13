@@ -19,9 +19,9 @@
     $array1[$posicion] = $valor_nuevo;
     print_r($array1);
 
-    /*while($indice <= $auxiliar + 1)
+    while($indice <= $auxiliar + 1)
     {
         echo $array1[$indice]."<br>";
         $indice++;
-    }*/
+    }
 ?>
