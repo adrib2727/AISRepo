@@ -3,11 +3,13 @@
         private $dni;
         private $nombre;
         private $apellido;
+        private $edad;
 
-        function constructor($dni, $nombre, $apellido){
+        function constructor($dni, $nombre, $apellido, $edad){
             $this->dni = $dni;
             $this->nombre = $nombre;
             $this->apellido = $apellido;
+            $this->edad = $edad;
         }
 
         //Getters
@@ -23,6 +25,10 @@
             return $this->apellido;
         }
 
+        public function getEdad(){
+            return $this->edad;
+        }
+
         //Setters
         public function setDni($dni){
             $this->dni = $dni;
@@ -36,16 +42,15 @@
             $this->apellido = $apellido;
         }
 
-        public function ToString()
-        {
-            return "Persona: ".$this->dni."".$this->nombre."".$this->apellido;
+        public function setEdad($edad){
+            $this->edad = $edad;
         }
 
+        public function ToString()
+        {
+            return "Persona: ".$this->dni."".$this->nombre."".$this->apellido."".$this->edad;
+        }
     }
-
-
-
-
-
-
 ?>
+
+    
