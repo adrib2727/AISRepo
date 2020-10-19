@@ -1,4 +1,7 @@
 <?php
+    require "phpclases/claseordenarpersonasporedad.php";
+    require "phpfunciones/funcionesordenarpersonasporedad.php";
+
     //Introducción de personas.
     $per1 = new Persona("392048392", "James", "Hetfield", "56");
     $per2 = new Persona("483920394", "Lars", "Ulrich", "67");
@@ -15,5 +18,20 @@
     $personas = array($per1, $per2, $per3, $per4, $per5, $per6, $per7, $per8, $per9, $per10);
     $longitud = count($personas) - 1;
     $contador = 0;
+    $indice = 0;
+    $auxiliar = $longitud;
 
+    //Llamada de funciones
+    while($indice <= $longitud)
+    {
+        $posicion = edad_maxima($personas, $longitud);
+        $longitud = intercambiar_datos($personas, $longitud, $posicion);
+    }
+
+    while($indice <= $auxiliar)
+    {
+        echo $personas[$indice]->__toString()."<br>";
+        $indice++;
+    }
 ?>
+    

@@ -2,6 +2,7 @@
     //Sacar edad máxima
     function edad_maxima($personas, $longitud)
     {
+        $contador = 0;
         $maximo = 0;
         $posicion = 0;
         while($contador <= $longitud)
@@ -18,7 +19,7 @@
 
     function intercambiar_datos(&$personas, $longitud, $posicion)
     {
-        $auxliar = $longitud;
+        $auxiliar = $longitud;
         $auxiliar = $personas[$posicion];
         $personas[$posicion] = $personas[$longitud];
         $personas[$longitud] = $auxiliar;
