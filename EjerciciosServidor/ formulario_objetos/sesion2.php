@@ -1,4 +1,6 @@
 <?php   
+    require "clases/clase_persona.php";
+
     session_start();
     $indice_princ = $_SESSION['indice'];
 
@@ -7,18 +9,14 @@
     !empty($_POST['introd_apellido']) && !empty($_POST['introd_edad'])
     && !empty($_POST['introd_oficio']))
     {
-        /*Los posteos se guardan como datos en el array $_SESSION, junto con su posición.*/
-        $_SESSION['introd_dni'.$indice_princ] = $_POST['introd_dni'];
-        $_SESSION['introd_nombre'.$indice_princ] = $_POST['introd_nombre'];
-        $_SESSION['introd_apellido'.$indice_princ] = $_POST['introd_apellido'];
-        $_SESSION['introd_edad'.$indice_princ] = $_POST['introd_edad'];
-        $_SESSION['introd_oficio'.$indice_princ] = $_POST['introd_oficio'];
-
+        $per = new Persona($dni, $nombre, $apellido, $edad, $oficio);
+        $_SESSION['persona'.$indice_princ] = $per;
+        
         $indice_princ++;
         $_SESSION['indice'] = $indice_princ;
     }
 
-    if($_POST['introd_dni'] < 0)
+    if($_POST['introd_dni'] < 0) //Si pongo menos de 0 en el DNI, el if se ejecuta y deja de ir al HTML.
     {
         header("Location:sesion3.php");
     }
@@ -30,6 +28,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordenador de personas</title>
+    <style>
+        body{
+            background-color: brown;
+        }
+    </style>
 </head>
 <body>
     <h1>Escribe tus credenciales</h1>
@@ -45,4 +48,3 @@
         <input id ="datos" type="submit" value="Enviar datos">
     </form>
 </body>
-</html>

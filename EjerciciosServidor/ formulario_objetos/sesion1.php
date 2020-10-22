@@ -1,6 +1,7 @@
 <?php
     session_start();
     $_SESSION['indice'] = 0;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordenador de personas</title>
+    <style>
+        body{
+            background-color: brown;
+        }
+    </style>
 </head>
 <body>
     <h1>Escribe tus credenciales</h1>

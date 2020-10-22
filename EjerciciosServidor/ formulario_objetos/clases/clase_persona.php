@@ -1,4 +1,3 @@
-
 <?php
     class Persona{
         private $dni;
