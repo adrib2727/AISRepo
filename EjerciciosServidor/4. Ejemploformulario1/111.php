@@ -11,6 +11,12 @@
     $longitud = count($array1);
     $aux = $longitud;
 
+    while($ind <= $indice)
+    {
+        $array1[$ind] = $_SESSION['introd_num'.$ind];
+        $ind++;
+    }
+
     while($contador < $longitud)
     {
         $posicion = edad_maxima($array1, $longitud);
