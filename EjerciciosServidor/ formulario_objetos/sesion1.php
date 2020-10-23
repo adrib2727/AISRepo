@@ -11,7 +11,7 @@
     <title>Ordenador de personas</title>
     <style>
         body{
-            background-color: brown;
+            background-color: skyblue;
         }
     </style>
 </head>

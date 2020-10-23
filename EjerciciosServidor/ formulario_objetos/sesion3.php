@@ -18,14 +18,11 @@
     while($ind_sesion <= $valor_sesion)
     {
         echo "Este bucle se ejecuta"."<br>";
-        $datos[$ind_sesion] = $_SESSION['introd_dni'.$ind_sesion];
-        $datos[$ind_sesion] = $_SESSION['introd_nombre'.$ind_sesion];
-        $datos[$ind_sesion] = $_SESSION['introd_apellido'.$ind_sesion];
-        $datos[$ind_sesion] = $_SESSION['introd_edad'.$ind_sesion];
-        $datos[$ind_sesion] = $_SESSION['introd_oficio'.$ind_sesion];
+        $datos[$ind_sesion] = $_SESSION['persona'.$ind_sesion]; 
         $ind_sesion++;
     }
 
+    echo "Después del bucle se ejecuta"."<br>";
     $ind_sesion = 0;
     while($ind_sesion < $longitud)
     {

@@ -2,18 +2,25 @@
     require "clases/clase_persona.php";
 
     session_start();
-    $indice_princ = $_SESSION['indice'];
+    $i = $_SESSION['indice'];
+    $per = 0;
 
     /*Si los datos que se han posteado no están vacíos...*/
     if(!empty($_POST['introd_dni']) && !empty($_POST['introd_nombre']) && 
     !empty($_POST['introd_apellido']) && !empty($_POST['introd_edad'])
     && !empty($_POST['introd_oficio']))
     {
-        $per = new Persona($dni, $nombre, $apellido, $edad, $oficio);
-        $_SESSION['persona'.$indice_princ] = $per;
+        $per = new Persona(
+        $dni = $_SESSION['introd_dni'.$i] = $_POST['introd_dni'],
+        $nombre = $_SESSION['introd_nombre'.$i] = $_POST['introd_nombre'],
+        $apellido  = $_SESSION['introd_apellido'.$i] = $_POST['introd_apellido'], 
+        $edad = $_SESSION['introd_edad'.$i] = $_POST['introd_edad'], 
+        $oficio = $_SESSION['introd_oficio'.$i] = $_POST['introd_oficio']);
+
+        $_SESSION['persona'.$i] = $per;
+        $i++;
         
-        $indice_princ++;
-        $_SESSION['indice'] = $indice_princ;
+        $_SESSION['indice'] = $i;
     }
 
     if($_POST['introd_dni'] < 0) //Si pongo menos de 0 en el DNI, el if se ejecuta y deja de ir al HTML.
@@ -30,7 +37,7 @@
     <title>Ordenador de personas</title>
     <style>
         body{
-            background-color: brown;
+            background-color: skyblue;
         }
     </style>
 </head>
