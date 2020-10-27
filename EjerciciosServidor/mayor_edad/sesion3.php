@@ -1,10 +1,10 @@
 <?php
-    require "clase/clase_nombres.php";
-    require "funciones/repeticiones_nombres.php";
+    require "clases/clase_edad.php";
+    require "funciones/mayor_edad.php";
 
     session_start();
-    $is = $_SESSION['indiceSesion'];
-
+    $is = $_SESSION["indiceSesion"];
+    $is = $is - 2; /*Hace que el 'terminar' no se vea*/
     $i = 0;
     $datos = array();
 
@@ -15,12 +15,21 @@
         $i++;
     }
 
-    $longitud = count($datos) - 1;
+    $longitud = count($datos)-1;
+    $aux = $longitud;
+    $ind = $i;
 
     while($i <= $longitud)
     {
-        echo "entra2"."<br>";
-        $numero_repetido = numero_primo($datos, $longitud);
+        $mayor_edad = calcular_edad($datos, $longitud);
+        $menor_edad = calcular_edad($datos, $longitud);
+        $i++;
+    }
+
+    while($ind <= $aux)
+    {
+        echo $datos[$ind]->toString()."<br>";
+        $ind++;
     }
 
     session_destroy();

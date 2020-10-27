@@ -10,9 +10,10 @@
         {
             while($contador2 <= $longitud)
             {
-                if($datos[$contador1]->getNombre() == $datos[$contador2])
+                if($datos[$contador1]->getNombre() == $datos[$contador2]->getRepeticiones())
                 {
                     $repeticiones++;
+                    $datos[$contador2]->getRepeticiones();
                     $numero_repetido = $datos[$contador1]->getNombre();
                 }
                 $contador2++;
